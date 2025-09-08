@@ -3,5 +3,5 @@
 load(":foo.bzl", "foo_binary")
 
 print("BUILD file")
-foo_binary(name = "bin1")
-foo_binary(name = "bin2")
+foo_binary(name = "bin1", username = "alice")
+foo_binary(name = "bin2", username = "bob")
