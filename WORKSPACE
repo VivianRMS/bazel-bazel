@@ -1,0 +1,1 @@
+workspace(name = "empty_rule")
