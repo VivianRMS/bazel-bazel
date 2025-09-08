@@ -3,10 +3,11 @@ load(":hello_world.bzl", "hello_world")
 hello_world(
     name = "hello",
     username = "test",
-    template = "file.cc.tpl",
 )
 
 cc_binary(
     name = "hello_bin",
     srcs = [":hello"],
 )
+
+exports_files(["file.cc.tpl"])

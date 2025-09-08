@@ -1,7 +1,14 @@
 # Before evaluating the BUILD file, Bazel evaluates all the files it loads.
 # If multiple BUILD files are loading foo.bzl, you would see only one occurrence of "bzl file evaluation" because Bazel caches the result of the evaluation.
 load(":foo.bzl", "foo_binary")
+load("//hello_world:hello_world.bzl", "hello_world")
 
 print("BUILD file")
 foo_binary(name = "bin1", username = "alice")
 foo_binary(name = "bin2", username = "bob")
+
+hello_world(name = "hello", username = "Vivian")
+cc_binary(
+    name = "hello_bin",
+    srcs = [":hello"],
+)

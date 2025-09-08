@@ -35,3 +35,29 @@ INFO: Elapsed time: 0.053s, Critical Path: 0.00s
 INFO: 2 processes: 2 internal.
 INFO: Build completed successfully, 2 total actions
 ```
+
+# Load from other package
+```bash
+bazel build foo/hello
+INFO: Analyzed target //foo:hello (0 packages loaded, 2 targets configured).
+INFO: Found 1 target...
+Target //foo:hello up-to-date:
+  bazel-bin/foo/hello.cc
+INFO: Elapsed time: 0.055s, Critical Path: 0.00s
+INFO: 2 processes: 2 internal.
+INFO: Build completed successfully, 2 total actions
+```
+
+```bash
+bazel run foo/hello_bin      
+DEBUG: /Users/kunlin/Desktop/work/bazel/foo/BUILD.bazel:6:6: BUILD file
+INFO: Analyzed target //foo:hello_bin (2 packages loaded, 13 targets configured).
+INFO: Found 1 target...
+Target //foo:hello_bin up-to-date:
+  bazel-bin/foo/hello_bin
+INFO: Elapsed time: 0.434s, Critical Path: 0.36s
+INFO: 7 processes: 3 action cache hit, 5 internal, 2 darwin-sandbox.
+INFO: Build completed successfully, 7 total actions
+INFO: Running command line: bazel-bin/foo/hello_bin
+Hello Vivian
+```
