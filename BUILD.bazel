@@ -1,5 +1,7 @@
+# Before evaluating the BUILD file, Bazel evaluates all the files it loads.
+# If multiple BUILD files are loading foo.bzl, you would see only one occurrence of "bzl file evaluation" because Bazel caches the result of the evaluation.
 load(":foo.bzl", "foo_binary")
 
-foo_binary(
-    name = "bin",
-)
+print("BUILD file")
+foo_binary(name = "bin1")
+foo_binary(name = "bin2")
